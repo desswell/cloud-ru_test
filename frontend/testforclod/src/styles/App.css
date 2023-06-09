@@ -1,0 +1,32 @@
+.avatarMain {
+  position: relative;
+  width: 80px;
+  background: #D5E4F7;
+  border-radius: 100px;
+}
+.myName {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  color: #333333;
+  padding-top: 10px;
+}
+.linkToText {
+  width: 52px;
+  font-size: 12px;
+  color: #5558FA;
+  text-decoration: none;
+}
+.linkTo {
+  margin-top: 10%;
+  margin-left: 30%;
+  display: flex;
+}
+.linkToSM {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+}
+.positions {
+  padding: 0 24px;
+}

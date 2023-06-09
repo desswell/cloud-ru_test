@@ -1,0 +1,65 @@
+.avatarMain {
+    position: relative;
+    width: 80px;
+    background: #D5E4F7;
+    border-radius: 100px;
+}
+.myName {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    color: #333333;
+    padding-top: 10px;
+}
+.linkToText {
+    width: 52px;
+    font-size: 12px;
+    color: #5558FA;
+    text-decoration: none;
+}
+.linkTo {
+    margin-top: 10%;
+    margin-left: 30%;
+    display: flex;
+}
+.linkToSM {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+}
+.positions {
+    padding: 0 24px;
+}
+.Input {
+    position: relative;
+    margin-left: 30%;
+    padding-top: 48px;
+}
+.title- {
+    font-weight: 500;
+    font-size: 14px;
+    color: #333333;
+}
+.input-area {
+    box-sizing: border-box;
+    padding: 12px;
+    width: 400px;
+    height: 44px;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    outline: none;
+}
+.downInput {
+    padding-top: 24px;
+}
+.btn-style {
+    width: 79px;
+    height: 44px;
+    background: #5558FA;
+    border-radius: 4px;
+    border-color: transparent;
+    color: #FFFFFF;
+    margin-left: 30%;
+    margin-top: 48px;
+}

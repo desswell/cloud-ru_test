@@ -1,0 +1,37 @@
+.InputFirst {
+    position: relative;
+    margin-left: 30%;
+    padding-top: 48px;
+}
+.input-areaFirstPage {
+    width: 300px;
+}
+.btn-pos {
+
+}
+.button-back {
+    width: 73px;
+    height: 44px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #5558FA;
+    margin-left: 30%;
+}
+.button-next {
+    width: 73px;
+    height: 44px;
+    margin-left: 546px;
+}
+.notChosen {
+    width: 244px;
+    height: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.48);
+}
+.error-text {
+    color: #ff0000;
+    font-size: 12px;
+}
