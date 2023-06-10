@@ -1,5 +1,4 @@
 body {
-  display: flex;
   justify-content: center;
   padding-top: 24px;
   background: #f4f4f5;
@@ -9,3 +8,12 @@ label {
   margin-bottom: 6px;
 }
 * {font-family: Arial}
+
+textarea {
+  width: 80%;
+  height: 84px;
+  outline: none;
+}
+input {
+  outline: none;
+}

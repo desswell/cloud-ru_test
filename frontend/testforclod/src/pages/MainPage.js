@@ -8,37 +8,41 @@ import {useDispatch} from "react-redux";
 import {setEmailAction, setPhoneAction, useEmail, usePhone} from "../store_redux/slices/dataUser";
 import Button from "../components/Button";
 import Error from "../components/Error";
+import { schemaMainPage } from "../components/Yup";
 
 export function MainPage() {
     const emailDone = useEmail()
     const phoneDone = usePhone()
-    const [phone, setPhone] = useState(phoneDone);
+    const [phone, setPhone] = useState(phoneDone)
     const [email, setEmail] = useState(emailDone)
     const [errorPhone, setErrorPhone] = useState(null);
     const [errorEmail, setErrorEmail] = useState(null);
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const HandleClick = () => {
-        if (!isValidEmail(email)) {
-            setErrorEmail('Email is invalid')
-        } else {
-            setErrorEmail(null);
-        }
-        if (phone.includes("_") || phone.length === 0) {
-            setErrorPhone("Phone number is invalid")
-        } else {
-            setErrorPhone(null)
-        }
-        if (isValidEmail(email) && !phone.includes("_") && phone.length > 0) {
-            dispatch(setPhoneAction(phone))
-            dispatch(setEmailAction(email))
-            navigate('/1')
-        }
+        schemaMainPage.validate({email: email, phone: phone}, {abortEarly: false})
+            .then(valid => {
+                setErrorEmail(null)
+                setErrorPhone(null)
+                dispatch(setPhoneAction(phone))
+                dispatch(setEmailAction(email))
+                navigate('/1')
+            })
+            .catch(error => {
+                const errors = error.errors
+                if (errors.length === 2){
+                    setErrorEmail(errors[0])
+                    setErrorPhone(errors[1])
+                } else if (errors[0].includes('Email')){
+                    setErrorPhone(null)
+                    setErrorEmail(errors[0])
+                } else {
+                    setErrorEmail(null)
+                    setErrorPhone(errors[0])
+                }
+            });
     };
 
-    function isValidEmail(email) {
-        return /\S+@\S+\.\S+/.test(email);
-    }
 
     return (
         <div className="main-page-container">

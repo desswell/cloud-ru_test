@@ -64,7 +64,8 @@ button {
     cursor: pointer;
 }
 .main-page-container {
-    width: 900px;
+    max-width: 900px;
     background: white;
     padding: 24px;
+    margin: 0 auto;
 }

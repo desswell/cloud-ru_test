@@ -2,6 +2,9 @@
     position: relative;
     padding-top: 48px;
 }
+.CheckboxWrapper > div > label {height: 20px;}
+.RadioWrapper > div> div > label {height: 20px;}
+
 .input-areaFirstPage {
     width: 300px;
 }

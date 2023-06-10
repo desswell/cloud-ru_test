@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { useSelector } from "react-redux";
+import {useState} from "react";
 
 
 const DataSlice = createSlice({
@@ -11,7 +12,8 @@ const DataSlice = createSlice({
         name: '',
         surname: '',
         sex: 'n',
-        advantages: []
+        advantages: [],
+        about: ''
     },
     reducers: {
         setPhone(state, {payload}) {
@@ -40,6 +42,9 @@ const DataSlice = createSlice({
         },
         addAdvantages(state, {payload}) {
             state.advantages.push(payload)
+        },
+        setAbout(state, {payload}) {
+            state.about = payload
         }
     }
 })
@@ -58,7 +63,8 @@ export const useSex = () =>
     useSelector((state) => state.data.sex)
 export const useAdvantages = () =>
     useSelector((state) => state.data.advantages)
-
+export const useAbout = () =>
+    useSelector((state) => state.data.about)
 export const {
     setPhone: setPhoneAction,
     setEmail: setEmailAction,
@@ -68,7 +74,8 @@ export const {
     setSex: setSexAction,
     setAdvantages: setAdvantagesAction,
     delAdvantages: delAdvantagesAction,
-    addAdvantages: addAdvantagesAction
+    addAdvantages: addAdvantagesAction,
+    setAbout: setAboutAction
 } = DataSlice.actions
 
 

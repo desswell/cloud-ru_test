@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 import Stepper from "../components/Steppper";
 import {AddIcon} from "../icons";
 import {Advantages} from "../components/Advantages";
-import {addAdvantagesAction, setAdvantagesAction, useAdvantages} from "../store_redux/slices/dataUser";
+import {addAdvantagesAction, useAdvantages} from "../store_redux/slices/dataUser";
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Radio, RadioGroup} from '@mui/material';
+import {Checkbox, FormControl, FormControlLabel, FormGroup, Radio, RadioGroup} from '@mui/material';
 import Button from "../components/Button";
 
 
@@ -13,12 +13,12 @@ export function SecondPage() {
     const navigate = useNavigate()
     const advantages = useAdvantages()
     const dispatch = useDispatch()
-    const [radio, setRadio] = useState([])
+    const [radio, setRadio] = useState('')
     const HandleClickAdd = () => {
         dispatch(addAdvantagesAction(""))
     }
     const HandleClick = () => {
-
+        navigate('/3')
     }
     return (
         <div className="main-page-container">
@@ -28,7 +28,7 @@ export function SecondPage() {
                 {advantages.map((data, index) => <Advantages props={data} id={index}/>)}
                 <button className="button-add" onClick={HandleClickAdd}><AddIcon/></button>
             </div>
-            <div className="InputFirst">
+            <div className="InputFirst CheckboxWrapper">
                 <label className="title-">Checkbox group</label>
                 <FormGroup className="CheckBox">
                     <FormControlLabel control={<Checkbox/>} label="1"/>
@@ -36,7 +36,7 @@ export function SecondPage() {
                     <FormControlLabel control={<Checkbox/>} label="3"/>
                 </FormGroup>
             </div>
-            <div className="InputFirst">
+            <div className="InputFirst RadioWrapper">
                 <label className="title-">Radio group</label>
                 <FormControl className='radio-group'>
                     <RadioGroup

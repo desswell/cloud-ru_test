@@ -1,0 +1,7 @@
+.counter {
+    position: absolute;
+    font-size: 10px;
+    color: #3b3939;
+    bottom: 5px;
+    margin-left: 73%;
+}
