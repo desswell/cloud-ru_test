@@ -21,7 +21,6 @@
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.16);
     border-radius: 4px;
-    margin-right: 19px;
     margin-bottom: 8px;
 }
 .field-advantage- {
@@ -32,4 +31,7 @@
     border-color: transparent;
     width: 30px;
     height: 30px;
+}
+.CheckBox {
+
 }

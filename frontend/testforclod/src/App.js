@@ -7,6 +7,7 @@ import './styles/stepper.css'
 import './styles/firstPage.css'
 import {SecondPage} from "./pages/SecondPage";
 import './styles/secondPage.css'
+import './styles/App.css'
 function App(){
   return(
       <div>

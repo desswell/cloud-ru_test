@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {MyStepper} from "../components/steppper";
+import Stepper from "../components/Steppper";
 import {useNavigate} from "react-router-dom";
 import { MenuItem, Select} from "@mui/material";
 import {
@@ -11,6 +11,8 @@ import {
     useSurname
 } from "../store_redux/slices/dataUser";
 import {useDispatch} from "react-redux";
+import Button from "../components/Button";
+import Error from "../components/Error";
 export function FirstPage () {
     const regK = /[A-Za-z]/g;
     const regN = /[0-9]/g;
@@ -56,25 +58,25 @@ export function FirstPage () {
         }
     }
     return(
-        <div>
-            <MyStepper/>
+        <div className="main-page-container">
+            <Stepper step={0}/>
             <div className="InputFirst">
-                <h1 className="title-">NickName</h1>
+                <label className="title-">NickName</label>
                 <input placeholder="Nickname" maxLength={30} value={nickname} className="input-area input-areaFirstPage" onChange={(event) => setNickname(event.target.value)}/>
-                {errorNickname && <h2 className="error-text">{errorNickname}</h2>}
+                {errorNickname && <Error>{errorNickname}</Error>}
             </div>
             <div className="InputFirst">
-                <h1 className="title-">Name</h1>
+                <label className="title-">Name</label>
                 <input placeholder="Name" maxLength={50} value={name} className="input-area input-areaFirstPage" onChange={(event) => setName(event.target.value)}/>
-                {errorName && <h2 className="error-text">{errorName}</h2>}
+                {errorName && <Error>{errorName}</Error>}
             </div>
             <div className="InputFirst">
-                <h1 className="title-">Surname</h1>
+                <label className="title-">Surname</label>
                 <input placeholder="Surname" maxLength={50} value={surName} className="input-area input-areaFirstPage" onChange={(event) => setSurname(event.target.value)}/>
-                {errorSurName && <h2 className="error-text">{errorSurName}</h2>}
+                {errorSurName && <Error>{errorSurName}</Error>}
             </div>
             <div className="InputFirst">
-                <h1 className="title-">Sex</h1>
+                <label className="title-">Sex</label>
                 <Select value={sex} className="input-area input-areaFirstPage" onChange={(event) => setSex(event.target.value)}>
                     <MenuItem disabled value="n">
                         <p className="notChosen">Не выборано</p>
@@ -82,11 +84,11 @@ export function FirstPage () {
                     <MenuItem value='Man'>Man</MenuItem>
                     <MenuItem value='Woman'>Woman</MenuItem>
                 </Select>
-                {errorSex && <h2 className="error-text">{errorSex}</h2>}
+                {errorSex && <Error>{errorSex}</Error>}
             </div>
             <div className='btn-pos'>
-                <button className="button-back" onClick={() => navigate('/')}>Назад</button>
-                <button className='btn-style button-next' onClick={HandleClick}>Далее</button>
+                <Button outline onClick={() => navigate('/')}>Назад</Button>
+                <Button onClick={HandleClick}>Далее</Button>
             </div>
         </div>
     )

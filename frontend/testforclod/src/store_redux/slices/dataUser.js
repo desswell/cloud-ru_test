@@ -37,7 +37,10 @@ const DataSlice = createSlice({
         },
         delAdvantages(state, {payload}) {
             state.advantages = state.advantages.filter((item, index) => index !== payload)
-        }, 
+        },
+        addAdvantages(state, {payload}) {
+            state.advantages.push(payload)
+        }
     }
 })
 
@@ -64,7 +67,8 @@ export const {
     setSurname: setSurnameAction,
     setSex: setSexAction,
     setAdvantages: setAdvantagesAction,
-    delAdvantages: delAdvantagesAction
+    delAdvantages: delAdvantagesAction,
+    addAdvantages: addAdvantagesAction
 } = DataSlice.actions
 
 

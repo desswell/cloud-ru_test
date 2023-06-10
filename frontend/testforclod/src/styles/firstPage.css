@@ -1,13 +1,13 @@
 .InputFirst {
     position: relative;
-    margin-left: 30%;
     padding-top: 48px;
 }
 .input-areaFirstPage {
     width: 300px;
 }
 .btn-pos {
-
+    display: flex;
+    justify-content: space-between;
 }
 .button-back {
     width: 73px;
@@ -15,12 +15,10 @@
     font-size: 14px;
     line-height: 20px;
     color: #5558FA;
-    margin-left: 30%;
 }
 .button-next {
     width: 73px;
     height: 44px;
-    margin-left: 546px;
 }
 .notChosen {
     width: 244px;
