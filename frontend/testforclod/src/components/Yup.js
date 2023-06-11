@@ -2,7 +2,6 @@ import * as yup from 'yup';
 
 const regK = /^[a-zA-Z0-9\u0410-\u044F ]+$/;
 const regSymbols =  /^[a-zA-Z\u0410-\u044F ]+$/;
-const regN = /[0-9]/g;
 const regEmail = /\S+@\S+\.\S+/;
 const phoneRegExp = /^\+7 \(\d{3}\)-\d{3}-\d{2}-\d{2}$/;
 export const schemaMainPage = yup.object().shape(
@@ -21,11 +20,21 @@ export const schemaFirstPage = yup.object().shape(
         sex: yup.string().oneOf(['Man', 'Woman'], '7')
     }
 )
-export const schemaSecondPage = yup.object().shape(
+export const schemaSecondPageAdvantages = yup.object().shape(
     {
         advantages: yup.string().min(1, 'Please, write or delete advantage'),
-        checkBox: yup.array().of(yup.string().min(1, 'Please, select something')),
+    }
+)
+
+export const schemaSecondPage = yup.object().shape(
+    {
+        checkBox: yup.array().min(1, 'Please, select something'),
         radioGroup: yup.string().required('Please, choose something')
     }
 )
 
+export const schemaThirdPage = yup.object().shape(
+    {
+        about: yup.string().required('Please, write something')
+    }
+)

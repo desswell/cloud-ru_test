@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { useSelector } from "react-redux";
-import {useState} from "react";
 
 
 const DataSlice = createSlice({
@@ -13,6 +12,8 @@ const DataSlice = createSlice({
         surname: '',
         sex: 'n',
         advantages: [],
+        radio: '',
+        checkbox: [],
         about: ''
     },
     reducers: {
@@ -34,17 +35,23 @@ const DataSlice = createSlice({
         setSex(state, {payload}) {
             state.sex = payload
         },
-        setAdvantages(state, {payload}) {
-            state.advantages = [...state.advantages, payload]
-        },
         delAdvantages(state, {payload}) {
             state.advantages = state.advantages.filter((item, index) => index !== payload)
         },
         addAdvantages(state, {payload}) {
-            state.advantages.push(payload)
+            state.advantages = [...state.advantages, payload]
         },
         setAbout(state, {payload}) {
             state.about = payload
+        },
+        updateAdvantage(state, {payload}) {
+            state.advantages[payload.id] = payload.newValue
+        },
+        setRadio(state, {payload}){
+            state.radio = payload
+        },
+        setCheckBox(state, {payload}) {
+            state.checkbox = payload
         }
     }
 })
@@ -65,6 +72,13 @@ export const useAdvantages = () =>
     useSelector((state) => state.data.advantages)
 export const useAbout = () =>
     useSelector((state) => state.data.about)
+export const useRadio = () =>
+    useSelector((state) => state.data.radio)
+export const useCheckBox = () =>
+    useSelector((state) => state.data.checkbox)
+export const useData = () =>
+    useSelector((state) => state.data)
+
 export const {
     setPhone: setPhoneAction,
     setEmail: setEmailAction,
@@ -72,10 +86,12 @@ export const {
     setName: setNameAction,
     setSurname: setSurnameAction,
     setSex: setSexAction,
-    setAdvantages: setAdvantagesAction,
     delAdvantages: delAdvantagesAction,
     addAdvantages: addAdvantagesAction,
-    setAbout: setAboutAction
+    setAbout: setAboutAction,
+    updateAdvantage: updateAdvantageAction,
+    setCheckBox: setCheckBoxAction,
+    setRadio: setRadioAction
 } = DataSlice.actions
 
 

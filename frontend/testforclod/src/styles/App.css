@@ -17,3 +17,6 @@ textarea {
 input {
   outline: none;
 }
+button {
+  cursor: pointer;
+}

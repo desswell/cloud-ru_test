@@ -5,3 +5,32 @@
     bottom: 5px;
     margin-left: 73%;
 }
+
+.modal_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-left: 25px;
+    font-weight: 600;
+}
+
+.modal_header.error {
+    justify-content: left;
+}
+
+.CompletedIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 65px;
+    background: rgba(5, 174, 113, 0.15);
+    width: 80px;
+    height: 80px;
+    margin-left: calc(50% - 80px / 2);
+    border-radius: 100px;
+}
+
+.CompletedIcon.Error {
+    background: rgba(232, 78, 88, 0.15);
+}
